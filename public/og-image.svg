@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1426"/>
+      <stop offset="100%" stop-color="#1a2138"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34dcc1"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="980" cy="120" r="200" fill="url(#accent)" opacity="0.08"/>
+  <circle cx="200" cy="520" r="160" fill="url(#accent)" opacity="0.06"/>
+  <text x="600" y="260" font-family="'Space Grotesk', sans-serif" font-size="64" font-weight="700" fill="url(#accent)" text-anchor="middle">Pathfinder</text>
+  <text x="600" y="340" font-family="Inter, sans-serif" font-size="28" font-weight="500" fill="#ebedf2" text-anchor="middle">EduPilot AI</text>
+  <text x="600" y="400" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#8892b0" text-anchor="middle">Find the path that actually fits you.</text>
+  <rect x="450" y="430" width="300" height="3" rx="1.5" fill="url(#accent)" opacity="0.5"/>
+</svg>
