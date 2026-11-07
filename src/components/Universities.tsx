@@ -4,6 +4,7 @@ import { universities, countryList, degreeLevelList, fieldList, continentList } 
 import type { University } from '@/types';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useSavedItems } from '@/hooks/useSavedItems';
+import UniversityLogo from '@/components/UniversityLogo';
 
 const sortOptions = [
   { value: 'featured', label: 'Featured First' },
@@ -98,9 +99,7 @@ export default function Universities() {
               {universities.filter(u => u.featured).slice(0, 8).map((uni) => (
                 <button key={uni.id} onClick={() => setSelected(uni)} className="glass-card rounded-2xl p-4 text-left hover:border-primary-400/30 transition-all hover:scale-105">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-sm text-white shrink-0" style={{ backgroundColor: uni.logoColor }}>
-                      {uni.shortName.substring(0, 2)}
-                    </div>
+                    <UniversityLogo uni={uni} size="sm" />
                     <div>
                       <div className="font-bold text-white text-sm">{uni.shortName}</div>
                       <div className="text-xs text-dark-300">{uni.flag} {uni.country}</div>
@@ -165,9 +164,7 @@ export default function Universities() {
               <button onClick={() => setSelected(uni)} className="w-full text-left glass-card rounded-2xl p-6 hover:border-primary-400/30 transition-all hover:scale-[1.02] h-full">
                 {uni.featured && <div className="absolute -top-2 -right-2 px-2 py-0.5 bg-accent-500 text-white text-[10px] font-bold rounded-full z-10">FEATURED</div>}
                 <div className="flex items-start justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center font-display font-bold text-lg text-white shrink-0" style={{ backgroundColor: uni.logoColor }}>
-                    {uni.shortName.substring(0, 2)}
-                  </div>
+                  <UniversityLogo uni={uni} size="md" />
                   <div className="flex flex-col items-end gap-1">
                     <span className="text-xl">{uni.flag}</span>
                     {uni.qsWorld && <span className="text-xs text-dark-400 flex items-center gap-0.5"><Award className="w-3 h-3" />QS #{uni.qsWorld}</span>}
@@ -262,9 +259,7 @@ function UniversityModal({ uni, onClose }: { uni: University; onClose: () => voi
         </button>
 
         <div className="flex items-start gap-4 mb-6">
-          <div className="w-16 h-16 rounded-2xl flex items-center justify-center font-display font-bold text-2xl text-white shrink-0" style={{ backgroundColor: uni.logoColor }}>
-            {uni.shortName.substring(0, 2)}
-          </div>
+          <UniversityLogo uni={uni} size="xl" />
           <div className="flex-1">
             <div className="flex items-center gap-2 mb-1">
               <h3 className="font-display font-bold text-2xl text-white">{uni.shortName}</h3>
@@ -378,7 +373,7 @@ function CompareModal({ unis, onClose, onClear }: { unis: University[]; onClose:
                 {unis.map((u) => (
                   <th key={u.id} className="text-left p-3 min-w-[180px]">
                     <div className="flex items-center gap-2 mb-1">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: u.logoColor }}>{u.shortName.substring(0, 2)}</div>
+                      <UniversityLogo uni={u} size="xs" />
                       <div><div className="text-white font-bold text-sm">{u.shortName}</div><div className="text-xs text-dark-300">{u.flag} {u.country}</div></div>
                     </div>
                   </th>

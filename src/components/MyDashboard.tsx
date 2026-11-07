@@ -6,6 +6,7 @@ import { useSavedItems } from '@/hooks/useSavedItems';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabase';
+import UniversityLogo from '@/components/UniversityLogo';
 
 function lsChecklistStats(): { done: number; total: number } {
   try {
@@ -108,12 +109,7 @@ export default function MyDashboard() {
               <div className="space-y-3">
                 {savedUnis.map(u => (
                   <div key={u.id} className="glass-card rounded-xl p-4 flex items-center gap-3 group">
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold text-xs text-white shrink-0"
-                      style={{ backgroundColor: u.logoColor }}
-                    >
-                      {u.shortName.substring(0, 2)}
-                    </div>
+                    <UniversityLogo uni={u} size="sm" />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="font-bold text-sm text-white truncate">{u.shortName}</span>

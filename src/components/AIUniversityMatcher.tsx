@@ -3,6 +3,7 @@ import { Brain, Sparkles, DollarSign, Award, CheckCircle2, AlertCircle, RefreshC
 import { universities } from '@/data/universities';
 import type { University, MatcherInput } from '@/types';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import UniversityLogo from '@/components/UniversityLogo';
 
 const emptyInput: MatcherInput = {
   educationLevel: '',
@@ -192,7 +193,7 @@ export default function AIUniversityMatcher() {
                 {results.map((match) => (
                   <div key={match.uni.id} className="glass-card rounded-2xl p-6 hover:border-primary-400/20 transition-all">
                     <div className="flex items-start gap-4">
-                      <div className="w-14 h-14 rounded-2xl flex items-center justify-center font-display font-bold text-lg text-white shrink-0" style={{ backgroundColor: match.uni.logoColor }}>{match.uni.shortName.substring(0, 2)}</div>
+                      <UniversityLogo uni={match.uni} size="lg" />
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-2">
                           <div>

@@ -3,6 +3,7 @@ import { Globe2, GraduationCap, DollarSign, Languages, ExternalLink, Award, X, P
 import { countries } from '@/data/countries';
 import { universities } from '@/data/universities';
 import { scholarships } from '@/data/scholarships';
+import UniversityLogo from '@/components/UniversityLogo';
 import type { Country } from '@/types';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -95,7 +96,7 @@ function CountryModal({ country, onClose }: { country: Country; onClose: () => v
               {countryUnis.map((u) => (
                 <a key={u.id} href={u.website} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between glass-light rounded-xl px-4 py-3 hover:bg-white/10 transition-all">
                   <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold text-white" style={{ backgroundColor: u.logoColor }}>{u.shortName.substring(0, 2)}</div>
+                    <UniversityLogo uni={u} size="xs" />
                     <span className="text-sm text-white font-medium">{u.shortName}</span>
                   </div>
                   {u.qsWorld && <span className="text-xs text-primary-300">QS #{u.qsWorld}</span>}
